@@ -27,12 +27,12 @@
 	<gazebo reference="scan">
 		<sensor name='laser_scan' type='gpu_lidar'>
 			<topic>scan</topic>
-			<update_rate>20</update_rate>
+			<update_rate>2</update_rate>
 			<gz_frame_id>scan</gz_frame_id>
 			<lidar>
 				<scan>
 					<horizontal>
-						<samples>360</samples>
+						<samples>180</samples>
 						<resolution>1.000000</resolution>
 						<min_angle>-2.2</min_angle>
 						<max_angle>2.2</max_angle>
@@ -45,7 +45,7 @@
 				</range>
 			</lidar>
 			<always_on>true</always_on>
-			<visualize>true</visualize>
+			<visualize>false</visualize>
 		</sensor>
 	</gazebo>
 
@@ -53,8 +53,8 @@
 	<gazebo reference="imu">
 		<sensor name="imu" type="imu">
 			<always_on>1</always_on>
-			<update_rate>1000</update_rate>
-			<visualize>true</visualize>
+			<update_rate>50</update_rate>
+			<visualize>false</visualize>
 			<topic>imu</topic>
 			<gz_frame_id>imu</gz_frame_id>
 			<imu>
@@ -113,7 +113,7 @@
 			</imu>
 		</sensor>
 	</gazebo>
-
+<!--
 	<gazebo reference="left_camera">
 		<sensor name="left_camera" type="camera">
 			<camera>
@@ -136,7 +136,7 @@
 			</camera>
 			<always_on>true</always_on>
 			<update_rate>15</update_rate>
-			<visualize>true</visualize>
+			<visualize>false</visualize>
 			<topic>left_camera/image</topic>
 		</sensor>
 	</gazebo>
@@ -163,7 +163,7 @@
 			</camera>
 			<always_on>true</always_on>
 			<update_rate>15</update_rate>
-			<visualize>true</visualize>
+			<visualize>false</visualize>
 			<topic>right_camera/image</topic>
 		</sensor>
 	</gazebo>
@@ -174,7 +174,7 @@
 			<update_rate>30.0</update_rate>
 			<topic>head_camera</topic>
 			<gz_frame_id>head_camera</gz_frame_id>
-			<visualize>true</visualize>
+			<visualize>false</visualize>
 			<camera>
 				<horizontal_fov>2.094</horizontal_fov>
 				<image>
@@ -200,5 +200,21 @@
 			<focalLength>0</focalLength>
 			<hackBaseline>0</hackBaseline>
 		</sensor>
+	</gazebo>
+	-->
+	<gazebo>
+		<plugin
+			filename="gz-sim-pose-publisher-system"
+			name="gz::sim::systems::PosePublisher">
+
+			<publish_model_pose>true</publish_model_pose>
+			<publish_link_pose>false</publish_link_pose>
+			<publish_visual_pose>false</publish_visual_pose>
+			<publish_collision_pose>false</publish_collision_pose>
+			<publish_sensor_pose>false</publish_sensor_pose>
+
+			<use_pose_vector_msg>false</use_pose_vector_msg>
+			<update_frequency>10</update_frequency>
+		</plugin>
 	</gazebo>
 </robot>

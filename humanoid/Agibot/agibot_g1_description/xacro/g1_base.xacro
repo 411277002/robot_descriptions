@@ -40,25 +40,25 @@
 		</collision>
 
 		<collision>
-			<origin xyz="0.22 0.14 -0.175245"/>
+			<origin xyz="0.22 0.14 -0.165245"/>
 			<geometry>
 				<sphere radius="0.038"/>
 			</geometry>
 		</collision>
 		<collision>
-			<origin xyz="0.22 -0.14 -0.175245"/>
+			<origin xyz="0.22 -0.14 -0.165245"/>
 			<geometry>
 				<sphere radius="0.038"/>
 			</geometry>
 		</collision>
 		<collision>
-			<origin xyz="-0.18 0.14 -0.175245"/>
+			<origin xyz="-0.18 0.14 -0.165245"/>
 			<geometry>
 				<sphere radius="0.038"/>
 			</geometry>
 		</collision>
 		<collision>
-			<origin xyz="-0.18 -0.14 -0.175245"/>
+			<origin xyz="-0.18 -0.14 -0.165245"/>
 			<geometry>
 				<sphere radius="0.038"/>
 			</geometry>
